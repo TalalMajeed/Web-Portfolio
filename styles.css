@@ -1528,11 +1528,24 @@ textarea {
         gap: 20px;
     }
 
+    .stat-number {
+        text-align: center;
+    }
+
+    .stat-label {
+        text-align: center;
+    }
+
     .upwork-card {
         padding: 30px 20px;
     }
 
     .upwork-info h3 {
         font-size: 28px;
+    }
+
+    .upwork-services ul {
+        text-align: center;
+        margin: 0 35px;
     }
 }

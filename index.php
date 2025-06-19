@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
         
-        $mail->setFrom('talal@codexon.pk', 'Contact Form');
+        $mail->setFrom('outreach@developertest.cloud', 'Contact Form');
+        $mail->addReplyTo('talal@codexon.pk', 'Talal Majeed');
         $mail->addAddress('talal@codexon.pk');
         $mail->isHTML(true);
         $mail->Subject = $subject;
