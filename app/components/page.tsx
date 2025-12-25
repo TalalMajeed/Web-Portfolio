@@ -2,9 +2,22 @@
 
 import { ThemeProvider } from "next-themes";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Toaster } from "@/components/ui/sonner";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
@@ -16,9 +29,10 @@ export default function ComponentsDemo() {
         <div className="w-full max-w-xl space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Shadcn UI Components</CardTitle>
+              <CardTitle>Website UI Components</CardTitle>
               <CardDescription>
-                Button, text box, card, text area, select box, and toast notification.
+                Button, text box, card, text area, select box, and toast
+                notification.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
