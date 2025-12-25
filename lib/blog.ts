@@ -160,7 +160,7 @@ export async function updateBlogPost(
     { returnDocument: "after" },
   );
 
-  return result.value;
+  return result;
 }
 
 export async function deleteBlogPost(id: string): Promise<boolean> {
@@ -168,4 +168,3 @@ export async function deleteBlogPost(id: string): Promise<boolean> {
   const result = await collection.deleteOne({ _id: new ObjectId(id) });
   return result.deletedCount === 1;
 }
-
