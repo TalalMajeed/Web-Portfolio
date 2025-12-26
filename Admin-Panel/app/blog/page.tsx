@@ -4,8 +4,6 @@ import Footer from "@/components/Footer";
 import { getPublishedBlogPosts } from "@/lib/blog";
 import { getCanonicalUrl, siteConfig } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "Blog",
   description:

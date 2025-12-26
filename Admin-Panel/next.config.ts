@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
-  /* config options here */
+  // Generate a fully static site that can be hosted from object storage.
+  output: "export",
 };
 
 export default nextConfig;

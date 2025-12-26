@@ -9,15 +9,13 @@ type Params = {
 };
 
 type PageProps = {
-  params: Promise<Params>;
+  params: Params;
 };
-
-export const dynamic = "force-dynamic";
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {
@@ -52,7 +50,7 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await getBlogPostBySlug(slug);
 
   if (!post) {
@@ -131,4 +129,9 @@ export default async function BlogPostPage({ params }: PageProps) {
       <Footer />
     </div>
   );
+}
+
+export async function generateStaticParams(): Promise<Params[]> {
+  const posts = await getPublishedBlogPosts();
+  return posts.map((post) => ({ slug: post.slug }));
 }
