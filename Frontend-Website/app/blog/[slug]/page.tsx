@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { getBlogPostBySlug } from "@/lib/blog";
+import { getBlogPostBySlug, getPublishedBlogPosts } from "@/lib/blog";
 import { getCanonicalUrl } from "@/lib/seo";
 
 type Params = {
@@ -17,6 +17,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = params;
   const post = await getBlogPostBySlug(slug);
+  console.log("Generating metadata for slug:", slug, "Post found:", !!post);
 
   if (!post) {
     return {

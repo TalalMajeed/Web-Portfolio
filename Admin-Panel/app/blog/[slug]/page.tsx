@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { getBlogPostBySlug } from "@/lib/blog";
+import {
+  getBlogPostBySlug,
+  getPublishedBlogPosts,
+} from "@/lib/blog";
 import { getCanonicalUrl } from "@/lib/seo";
 
 type Params = {
