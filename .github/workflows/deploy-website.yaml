@@ -3,10 +3,16 @@ name: Deploy to GCS
 on:
   push:
     branches: ["master"]
+    paths:
+      - "Frontend-Website/**"
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Frontend-Website
 
     steps:
       - name: Checkout repository

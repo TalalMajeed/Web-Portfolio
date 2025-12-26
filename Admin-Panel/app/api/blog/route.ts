@@ -16,16 +16,48 @@ async function ensureAdminSession() {
 
 async function triggerFrontendRebuild() {
   const webhookUrl = process.env.FRONTEND_REBUILD_WEBHOOK_URL;
-  if (!webhookUrl) return;
+  const githubOwner = process.env.GITHUB_DEPLOY_OWNER;
+  const githubRepo = process.env.GITHUB_DEPLOY_REPO;
+  const githubToken = process.env.GITHUB_DEPLOY_TOKEN;
+  const githubRef =
+    process.env.GITHUB_DEPLOY_REF || "master";
+  const githubWorkflowFile =
+    process.env.GITHUB_DEPLOY_WORKFLOW ||
+    "deploy-website.yaml";
 
   try {
-    await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ source: "admin-panel", type: "blog-changed" }),
-    });
+    if (webhookUrl) {
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          source: "admin-panel",
+          type: "blog-changed",
+        }),
+      });
+    }
+
+    if (githubOwner && githubRepo && githubToken) {
+      const githubUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows/${githubWorkflowFile}/dispatches`;
+
+      await fetch(githubUrl, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${githubToken}`,
+          "Content-Type": "application/json",
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
+        body: JSON.stringify({ ref: githubRef }),
+      });
+    }
   } catch (error) {
-    console.error("Failed to trigger frontend rebuild:", error);
+    console.error(
+      "Failed to trigger frontend rebuild or deploy workflow:",
+      error,
+    );
   }
 }
 

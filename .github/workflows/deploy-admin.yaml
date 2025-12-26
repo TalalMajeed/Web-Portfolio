@@ -4,11 +4,16 @@ on:
   push:
     branches:
       - master
-    workflow_dispatch:
+    paths:
+      - "Admin-Panel/**"
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Admin-Panel
 
     steps:
       - name: Checkout repository
