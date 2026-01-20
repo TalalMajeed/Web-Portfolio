@@ -10,9 +10,9 @@ export default function AboutSection() {
           {/* Main Bio */}
           <div className="space-y-6">
             <p className="text-lg text-gray-700 leading-relaxed">
-              I am a Senior Software Engineer with a passion for building
-              scalable applications and integrating AI/ML solutions into
-              real-world problems.
+              I am a Software Engineer with a passion for building scalable
+              applications and integrating AI/ML solutions into real-world
+              problems.
             </p>
 
             <div className="space-y-4">

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Talal Majeed | Senior Software Engineer",
+    default: "Talal Majeed | Software Engineer",
     template: "%s | Talal Majeed",
   },
   description: siteConfig.description,
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Talal Majeed | Senior Software Engineer",
+    title: "Talal Majeed | Software Engineer",
     description: siteConfig.description,
   },
   twitter: {
     card: "summary",
-    title: "Talal Majeed | Senior Software Engineer",
+    title: "Talal Majeed | Software Engineer",
     description: siteConfig.description,
   },
   icons: {

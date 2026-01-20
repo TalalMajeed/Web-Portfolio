@@ -9,7 +9,7 @@ export default function HeroSection() {
           Talal Majeed
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mb-8 font-medium">
-          Senior Software Engineer
+          Software Engineer
         </p>
         <p className="text-lg text-gray-600 mb-12 leading-relaxed">
           AI & ML Engineer at Ecello specializing in full-stack development,

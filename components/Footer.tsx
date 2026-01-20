@@ -34,8 +34,8 @@ export default function Footer() {
               Talal Majeed
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Senior Software Engineer specializing in full-stack development,
-              cloud infrastructure, and AI/ML integration.
+              Software Engineer specializing in full-stack development, cloud
+              infrastructure, and AI/ML integration.
             </p>
             <p className="text-gray-500 text-sm">
               Based in Islamabad, Pakistan
